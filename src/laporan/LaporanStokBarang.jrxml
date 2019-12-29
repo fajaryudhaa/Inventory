@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb30d65b-43da-42d7-8d50-edfd93dc169b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="gambar" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     barang.`kode` AS barang_kode,
+     barang.`nama` AS barang_nama,
+     barang.`jumlah` AS barang_jumlah
+FROM
+     `barang` barang]]>
+	</queryString>
+	<field name="barang_kode" class="java.lang.String"/>
+	<field name="barang_nama" class="java.lang.String"/>
+	<field name="barang_jumlah" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="20" width="555" height="34" uuid="5e7fba6e-b61f-4aa2-abc6-18beee898f0d"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PT. Hans Platindo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="127" y="58" width="309" height="21" uuid="00d56a09-b140-4178-aeff-90e2dc9ce6b6"/>
+				<textElement markup="none"/>
+				<text><![CDATA[Jl. Raya Mercedes Benz No.70 Gunung Putri,Bogor, Jawa Barat]]></text>
+			</staticText>
+			<image>
+				<reportElement x="41" y="0" width="240" height="79" uuid="57397f30-97a3-425f-a7e2-33252ad987ac"/>
+				<imageExpression><![CDATA[$P{gambar}]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="69" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="555" height="20" uuid="ae02855e-c86c-43c3-b3d7-b47495b70135"/>
+				<textElement textAlignment="Center" markup="none">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Laporan Permintaan Barang]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="3" width="555" height="1" uuid="04396b8f-139f-4213-a374-24a5e848d4d0"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="-32" width="555" height="1" uuid="3fd8dc4d-bb61-4659-ab08-ac326395ad4c"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="1" width="178" height="20" uuid="0eee226f-d962-455d-a3f5-8f8a4318ad44"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[barang_kode]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="178" y="1" width="188" height="20" uuid="ff0cc729-75de-4cad-b406-d33366fa2a09"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[barang_nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="1" width="189" height="20" uuid="9b681702-2467-489b-b9fe-b9a467ed339c"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[barang_jumlah]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="178" height="20" uuid="adfe650e-2f0b-4a82-9b29-ccfeeaeb6ca2"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{barang_kode}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="0" width="188" height="20" uuid="cfb63c64-bd39-4fc2-8a00-ce881b49a15d"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{barang_nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="189" height="20" uuid="c156ff41-1453-4bbf-ba55-3ba66982eb4e"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{barang_jumlah}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="148" splitType="Stretch">
+			<staticText>
+				<reportElement x="392" y="98" width="124" height="20" uuid="942ae011-916d-42ed-9708-226d58c4560f"/>
+				<text><![CDATA[Sukiyo, S.Kom]]></text>
+			</staticText>
+			<line>
+				<reportElement x="391" y="117" width="141" height="1" uuid="446fb0e6-efb7-41ad-b25e-87a9ee84bcba"/>
+			</line>
+			<staticText>
+				<reportElement x="391" y="118" width="125" height="20" uuid="ecd72509-e519-4747-990e-234103ee35f2"/>
+				<text><![CDATA[Kepala Biro USDM/IT]]></text>
+			</staticText>
+			<textField pattern="dd MMMMM yyyy">
+				<reportElement x="392" y="15" width="154" height="20" uuid="3a31f6e3-4bc0-42e0-9e3e-9c0afc4b14f3"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Jakarta, "+new SimpleDateFormat("EEEEE, dd MMMMM yyyy",new java.util.Locale("id")).format(new Date())]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="8" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="8" splitType="Stretch"/>
+	</summary>
+</jasperReport>
